@@ -21,7 +21,7 @@ El propósito principal del proyecto es ofrecer una experiencia visual comercial
 ## 📁 Estructura del Encarpetado
 
 ```text
-introduccion-dom/
+kosas-studio/
 │
 ├── index.html                  # VISTA PRINCIPAL: Inicio de Sesión (Acceso de clientes)
 ├── README.md                   # Documentación técnica y modelos de datos
@@ -44,12 +44,60 @@ introduccion-dom/
 │   ├── jarron-terracota.jpg
 │   └── altavoz-mesa.jpg
 │
-└── css/                        # Hojas de estilo modulares
-    ├── base.css                # Variables de color, reset, escala tipográfica y contenedor
-    ├── components.css          # Botones, navbar, tarjetas, badges, inputs y footer
-    ├── pages.css               # Grillas, vistas split y fichas de producto
-    └── style.css               # Hoja principal que consolida todos los módulos
+├── css/                        # Hojas de estilo modulares
+│   ├── base.css                # Variables de color, reset, escala tipográfica y contenedor
+│   ├── components.css          # Botones, navbar, tarjetas, badges, inputs y footer
+│   ├── pages.css               # Grillas, vistas split y fichas de producto
+│   └── style.css               # Hoja principal que consolida todos los módulos
+│
+└── js/                         # Arquitectura JavaScript planificada (documentación)
+    ├── data.js                 # Colección de datos semilla y catálogo predeterminado
+    ├── local-storage.js        # Módulo de persistencia local (usuarios y cosas)
+    ├── alerts.js               # Gestor de notificaciones visuales y feedback
+    ├── auth-controller.js      # Controlador de lógica para login y registro de usuarios
+    └── cosas-controller.js     # Controlador de lógica para el registro y publicación de cosas
 ```
+
+---
+
+## 📦 Arquitectura JavaScript Planificada (`js/`)
+
+En esta sección se documenta el rol y las responsabilidades de los cinco módulos previstos para la capa lógica de la aplicación:
+
+### 1. `js/data.js`
+- **Propósito:** Centralizar los datos semilla y las constantes del catálogo.
+- **Responsabilidades:**
+  - Alojar el arreglo inicial de objetos con sus especificaciones técnicas completas (lámparas, sillas, relojes, bandejas, etc.).
+  - Definir las categorías permitidas (`iluminacion`, `mobiliario`, `accesorios`, `estudio`, `decoracion`).
+  - Proveer la estructura inicial para alimentar el almacenamiento local cuando el usuario ingresa por primera vez.
+
+### 2. `js/local-storage.js`
+- **Propósito:** Abstraer las operaciones de lectura y escritura en la API de `localStorage` del navegador.
+- **Responsabilidades:**
+  - Persistir el registro de nuevos usuarios y validar credenciales en el inicio de sesión.
+  - Guardar y recuperar las nuevas piezas publicadas desde el formulario de catalogación.
+  - Mantener el estado de la sesión activa y la lista de objetos favoritos o seleccionados por el cliente.
+
+### 3. `js/alerts.js`
+- **Propósito:** Proveer un sistema de alertas y avisos visuales alineado con la estética de diseño brutalista.
+- **Responsabilidades:**
+  - Mostrar notificaciones flotantes o mensajes en bloque para confirmar acciones (ej. "Objeto publicado exitosamente", "Sesión iniciada con éxito").
+  - Gestionar alertas de advertencia o error cuando existan campos incompletos en los formularios.
+  - Temporizar el cierre automático de las alertas y permitir el cierre manual por parte del usuario.
+
+### 4. `js/auth-controller.js`
+- **Propósito:** Controlador de interacción y validación para los flujos de autenticación (Login y Registro).
+- **Responsabilidades:**
+  - **En Inicio de Sesión (`index.html`):** Capturar el envío del formulario, verificar la existencia del correo y coincidencia de contraseña contra los datos en `local-storage.js`, registrar la sesión activa y redirigir a `pages/catalogo.html`.
+  - **En Registro (`pages/registro.html`):** Validar que las contraseñas coincidan, comprobar que el correo no esté duplicado, verificar la aceptación obligatoria de términos, instanciar el objeto bajo el esquema `modeloUsuario`, almacenarlo en persistencia y notificar mediante `alerts.js`.
+
+### 5. `js/cosas-controller.js`
+- **Propósito:** Controlador de lógica para el formulario de incorporación y publicación de objetos.
+- **Responsabilidades:**
+  - **En Publicación (`pages/agregar-cosa.html`):** Capturar los campos del formulario (nombre, precio, categoría, materiales, dimensiones, stock y descripción).
+  - Sanitizar los valores numéricos y generar un identificador de referencia secuencial (ej. `ART-107`).
+  - Procesar la selección de imagen o asignar una ilustración/fotografía predeterminada.
+  - Construir el objeto literal correspondiente a `modeloCosa`, agregarlo a la lista de productos en `local-storage.js` y desplegar la alerta de confirmación con redirección al catálogo actualizado.
 
 ---
 
