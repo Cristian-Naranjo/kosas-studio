@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar una Cosa — KOSAS STUDIO</title>
+  <meta name="description" content="Formulario para agregar y publicar un nuevo objeto o producto en el catálogo.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <aside class="top-notice">
+    <div class="container top-notice-inner">
+      <span>PANEL DE PUBLICACIÓN — AGREGA PIEZAS A NUESTRA SELECCIÓN</span>
+      <span>KOSAS STUDIO 2026</span>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="nav-brand">
+        <span>KOSAS</span>
+        <span class="nav-brand-badge">STUDIO</span>
+      </a>
+
+      <nav aria-label="Navegación del sitio">
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Iniciar Sesión</a></li>
+          <li><a href="catalogo.html" class="nav-link">Explorar Cosas</a></li>
+          <li><a href="agregar-cosa.html" class="nav-link highlight active">+ Publicar Cosa</a></li>
+          <li><a href="registro.html" class="nav-link">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container panel-wrapper">
+
+      <div class="form-panel-wide b-card">
+        
+        <div class="card-header">
+          <span class="tag tag-yellow">NUEVA PUBLICACIÓN</span>
+          <span class="mono" style="font-size: 0.8rem; font-weight: 700;">FORMULARIO</span>
+        </div>
+
+        <div class="card-body" style="padding: clamp(1.5rem, 3.5vw, 2.5rem);">
+          
+          <div class="form-header-area">
+            <span class="mono" style="font-size: 0.8rem; color: var(--color-text-muted);">CATÁLOGO DE PRODUCTOS</span>
+            <h1>Publicar una Nueva Cosa</h1>
+            <p style="margin-top: 0.25rem;">
+              Completa los datos del objeto para incorporarlo a la colección visible para todos los clientes y visitantes.
+            </p>
+          </div>
+
+          <div class="callout-box">
+            <span class="mono" style="font-weight: 700; font-size: 0.8rem;">CONSEJO:</span>
+            <div>
+              Detalla con claridad los materiales y dimensiones exactas para facilitar la decisión de compra de los usuarios.
+            </div>
+          </div>
+
+          <form action="catalogo.html" method="GET">
+            
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="nombre-producto" class="form-label">Nombre del Objeto</label>
+                <input 
+                  type="text" 
+                  id="nombre-producto" 
+                  name="nombre-producto" 
+                  class="form-input" 
+                  placeholder="Ej: Lámpara de Mesa en Cerámica" 
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="precio" class="form-label">Precio de Venta ($ USD)</label>
+                <input 
+                  type="text" 
+                  id="precio" 
+                  name="precio" 
+                  class="form-input mono" 
+                  placeholder="Ej: $75.00" 
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="categoria" class="form-label">Categoría del Objeto</label>
+                <select id="categoria" name="categoria" class="form-input" style="cursor: pointer;">
+                  <option value="iluminacion">Iluminación</option>
+                  <option value="mobiliario">Mobiliario Auxiliar</option>
+                  <option value="accesorios">Accesorios de Mesa</option>
+                  <option value="estudio">Artículos de Estudio</option>
+                  <option value="decoracion">Decoración & Hogar</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="materiales" class="form-label">Materiales Principales</label>
+                <input 
+                  type="text" 
+                  id="materiales" 
+                  name="materiales" 
+                  class="form-input" 
+                  placeholder="Ej: Madera de Fresno, Acero, Cemento" 
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="dimensiones" class="form-label">Dimensiones (Ancho x Largo x Alto)</label>
+                <input 
+                  type="text" 
+                  id="dimensiones" 
+                  name="dimensiones" 
+                  class="form-input mono" 
+                  placeholder="Ej: 20 x 15 x 30 cm"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="stock" class="form-label">Unidades en Inventario</label>
+                <input 
+                  type="number" 
+                  id="stock" 
+                  name="stock" 
+                  class="form-input mono" 
+                  placeholder="Ej: 10" 
+                  min="1" 
+                  value="1"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="descripcion" class="form-label">Descripción del Producto</label>
+              <textarea 
+                id="descripcion" 
+                name="descripcion" 
+                class="form-input" 
+                rows="4" 
+                placeholder="Describe la función, inspiración, acabados y particularidades de esta pieza..." 
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="foto-producto" class="form-label">Fotografía de la Pieza</label>
+              <input 
+                type="file" 
+                id="foto-producto" 
+                name="foto-producto" 
+                class="form-input"
+              >
+            </div>
+
+            <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: var(--space-lg);">
+              <button type="submit" class="btn btn-primary" style="flex: 1; padding: 0.95rem;">
+                Publicar Cosa en el Catálogo
+              </button>
+              <a href="catalogo.html" class="btn" style="background-color: var(--color-surface-muted);">
+                Descartar
+              </a>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>KOSAS STUDIO</h4>
+          <p style="color: #bfbcb6; font-size: 0.9rem; line-height: 1.6;">
+            Diseño, producción y catálogo curado de objetos para espacios contemporáneos. Estructura honesta y materiales de larga durabilidad.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>NAVEGACIÓN</h4>
+          <ul class="footer-links">
+            <li><a href="catalogo.html" class="footer-link">Explorar Catálogo</a></li>
+            <li><a href="agregar-cosa.html" class="footer-link">Publicar una Cosa</a></li>
+            <li><a href="../index.html" class="footer-link">Acceso de Clientes</a></li>
+            <li><a href="registro.html" class="footer-link">Crear Cuenta Nueva</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>ATENCIÓN</h4>
+          <ul class="footer-links">
+            <li><a href="faq.html" class="footer-link">Preguntas Frecuentes</a></li>
+            <li><a href="envios-devoluciones.html" class="footer-link">Guía de Envíos y Devoluciones</a></li>
+            <li><a href="garantia.html" class="footer-link">Garantía de Productos</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto y Ubicación</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>BOLETÍN</h4>
+          <p style="color: #bfbcb6; font-size: 0.85rem; margin-bottom: 0.75rem;">
+            Recibe avisos directos cuando agregamos nuevas piezas al catálogo.
+          </p>
+          <div style="display: flex; gap: 0.25rem;">
+            <input type="email" placeholder="tu@correo.com" class="form-input" style="padding: 0.5rem; font-size: 0.85rem;">
+            <button class="btn btn-primary btn-sm" type="button">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 KOSAS STUDIO. TODOS LOS DERECHOS RESERVADOS.</span>
+        <span>FORMULARIO DE PUBLICACIÓN</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

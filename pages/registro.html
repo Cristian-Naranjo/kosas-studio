@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Cuenta — KOSAS STUDIO</title>
+  <meta name="description" content="Regístrate como cliente en KOSAS para acceder a lanzamientos exclusivos y guardar tus objetos favoritos.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <aside class="top-notice">
+    <div class="container top-notice-inner">
+      <span>REGÍSTRATE HOY Y OBTÉN UN 10% DE DESCUENTO EN TU PRIMERA COMPRA</span>
+      <span>CÓDIGO: BIENVENIDO10</span>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="nav-brand">
+        <span>KOSAS</span>
+        <span class="nav-brand-badge">STUDIO</span>
+      </a>
+
+      <nav aria-label="Navegación del sitio">
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Iniciar Sesión</a></li>
+          <li><a href="catalogo.html" class="nav-link">Explorar Cosas</a></li>
+          <li><a href="agregar-cosa.html" class="nav-link highlight">+ Publicar Cosa</a></li>
+          <li><a href="registro.html" class="nav-link active">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container panel-wrapper">
+
+      <div class="form-panel-wide b-card">
+        
+        <div class="card-header">
+          <span class="tag tag-yellow">NUEVO CLIENTE</span>
+          <span class="mono" style="font-size: 0.8rem; font-weight: 700;">REGISTRO</span>
+        </div>
+
+        <div class="card-body" style="padding: clamp(1.5rem, 3.5vw, 2.5rem);">
+          
+          <div class="form-header-area">
+            <span class="mono" style="font-size: 0.8rem; color: var(--color-text-muted);">ÚNETE A LA COMUNIDAD</span>
+            <h1>Crear una Cuenta de Cliente</h1>
+            <p style="margin-top: 0.25rem;">
+              Crea tu perfil para agilizar tus compras, hacer seguimiento a tus envíos y guardar tus cosas favoritas.
+            </p>
+          </div>
+
+          <form action="../index.html" method="GET">
+            
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="nombre" class="form-label">Nombre Completo</label>
+                <input 
+                  type="text" 
+                  id="nombre" 
+                  name="nombre" 
+                  class="form-input" 
+                  placeholder="Ej: Sofia Martínez" 
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="telefono" class="form-label">Teléfono de Contacto</label>
+                <input 
+                  type="tel" 
+                  id="telefono" 
+                  name="telefono" 
+                  class="form-input mono" 
+                  placeholder="+34 600 000 000"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="correo" class="form-label">Correo Electrónico</label>
+              <input 
+                type="email" 
+                id="correo" 
+                name="correo" 
+                class="form-input" 
+                placeholder="sofia@ejemplo.com" 
+                required
+              >
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="pass1" class="form-label">Contraseña</label>
+                <input 
+                  type="password" 
+                  id="pass1" 
+                  name="pass1" 
+                  class="form-input" 
+                  placeholder="Mínimo 8 caracteres" 
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="pass2" class="form-label">Confirmar Contraseña</label>
+                <input 
+                  type="password" 
+                  id="pass2" 
+                  name="pass2" 
+                  class="form-input" 
+                  placeholder="Repite tu contraseña" 
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-check">
+                <input type="checkbox" name="terminos" required>
+                <span>He leído y acepto los términos y condiciones de compra y la política de privacidad.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="padding: 0.95rem; margin-top: var(--space-md); font-size: 1rem;">
+              Completar Registro de Cliente
+            </button>
+
+          </form>
+
+          <div class="form-footer-nav">
+            ¿Ya tienes una cuenta registrada? 
+            <a href="../index.html">Iniciar sesión aquí</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>KOSAS STUDIO</h4>
+          <p style="color: #bfbcb6; font-size: 0.9rem; line-height: 1.6;">
+            Diseño, producción y catálogo curado de objetos para espacios contemporáneos. Estructura honesta y materiales de larga durabilidad.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>NAVEGACIÓN</h4>
+          <ul class="footer-links">
+            <li><a href="catalogo.html" class="footer-link">Explorar Catálogo</a></li>
+            <li><a href="agregar-cosa.html" class="footer-link">Publicar una Cosa</a></li>
+            <li><a href="../index.html" class="footer-link">Acceso de Clientes</a></li>
+            <li><a href="registro.html" class="footer-link">Crear Cuenta Nueva</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>ATENCIÓN</h4>
+          <ul class="footer-links">
+            <li><a href="faq.html" class="footer-link">Preguntas Frecuentes</a></li>
+            <li><a href="envios-devoluciones.html" class="footer-link">Guía de Envíos y Devoluciones</a></li>
+            <li><a href="garantia.html" class="footer-link">Garantía de Productos</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto y Ubicación</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>BOLETÍN</h4>
+          <p style="color: #bfbcb6; font-size: 0.85rem; margin-bottom: 0.75rem;">
+            Recibe avisos directos cuando agregamos nuevas piezas al catálogo.
+          </p>
+          <div style="display: flex; gap: 0.25rem;">
+            <input type="email" placeholder="tu@correo.com" class="form-input" style="padding: 0.5rem; font-size: 0.85rem;">
+            <button class="btn btn-primary btn-sm" type="button">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 KOSAS STUDIO. TODOS LOS DERECHOS RESERVADOS.</span>
+        <span>REGISTRO DE CLIENTES</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

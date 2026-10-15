@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto y Ubicación — KOSAS STUDIO</title>
+  <meta name="description" content="Información de contacto, ubicación del estudio central y formulario de atención directa.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <aside class="top-notice">
+    <div class="container top-notice-inner">
+      <span>CANAL DE COMUNICACIÓN DIRECTO — HORARIO DE ATENCIÓN: 09:00 A 18:00</span>
+      <span>TEL: +34 912 345 678</span>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="nav-brand">
+        <span>KOSAS</span>
+        <span class="nav-brand-badge">STUDIO</span>
+      </a>
+
+      <nav aria-label="Navegación del sitio">
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Iniciar Sesión</a></li>
+          <li><a href="catalogo.html" class="nav-link">Explorar Cosas</a></li>
+          <li><a href="agregar-cosa.html" class="nav-link highlight">+ Publicar Cosa</a></li>
+          <li><a href="registro.html" class="nav-link">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="info-content-card">
+        <div class="info-header">
+          <span class="tag tag-yellow">CANAL DE CONTACTO</span>
+          <h1 style="margin-top: 0.35rem;">Contacto y Ubicación</h1>
+          <p style="margin-top: 0.25rem;">
+            Estamos a tu disposición para asesoramiento sobre piezas a medida, consultas sobre el catálogo o visitas a nuestro espacio de exposición.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+
+          <div>
+            <div class="contact-box">
+              <span class="mono" style="font-size: 0.75rem; font-weight: 700; color: var(--color-text-muted);">ESPACIO FÍSICO</span>
+              <h2 style="font-size: 1.25rem; margin: 0.25rem 0 0.5rem;">Estudio & Galería Central</h2>
+              <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">Calle de la Industria 48, Nave 12<br>28005 Madrid, España</p>
+              <p class="mono" style="font-size: 0.85rem;">Acceso libre previa concertación de cita.</p>
+            </div>
+
+            <div class="contact-box">
+              <span class="mono" style="font-size: 0.75rem; font-weight: 700; color: var(--color-text-muted);">CANALES DIRECTOS</span>
+              <h2 style="font-size: 1.25rem; margin: 0.25rem 0 0.5rem;">Atención al Cliente</h2>
+              <table class="specs-table" style="font-size: 0.88rem;">
+                <tr><td>CORREO ELECTRÓNICO:</td><td>contacto@kosas.com</td></tr>
+                <tr><td>TELÉFONO OFICINA:</td><td>+34 912 345 678</td></tr>
+                <tr><td>PRENSA Y COLABORACIÓN:</td><td>prensa@kosas.com</td></tr>
+                <tr><td>HORARIO:</td><td>Lunes a Viernes 09:00 - 18:00</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <h2 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Envíanos un Mensaje</h2>
+            <p style="font-size: 0.9rem; margin-bottom: var(--space-md);">
+              Completa el formulario y responderemos a tu consulta en un plazo máximo de 24 horas laborables.
+            </p>
+
+            <form action="catalogo.html" method="GET">
+              <div class="form-group">
+                <label for="nombre-contacto" class="form-label">Nombre y Apellidos</label>
+                <input type="text" id="nombre-contacto" name="nombre-contacto" class="form-input" placeholder="Tu nombre" required>
+              </div>
+
+              <div class="form-group">
+                <label for="correo-contacto" class="form-label">Correo Electrónico</label>
+                <input type="email" id="correo-contacto" name="correo-contacto" class="form-input" placeholder="tu@correo.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="motivo" class="form-label">Motivo de la Consulta</label>
+                <select id="motivo" name="motivo" class="form-input" style="cursor: pointer;">
+                  <option value="pedido">Consulta sobre un Pedido</option>
+                  <option value="producto">Información sobre una Pieza</option>
+                  <option value="publicar">Propuesta de Publicación / Artesanía</option>
+                  <option value="otro">Otro Asunto</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" class="form-input" rows="4" placeholder="Escribe tu mensaje con el mayor detalle posible..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" style="padding: 0.9rem;">
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>KOSAS STUDIO</h4>
+          <p style="color: #bfbcb6; font-size: 0.9rem; line-height: 1.6;">
+            Diseño, producción y catálogo curado de objetos para espacios contemporáneos. Estructura honesta y materiales de larga durabilidad.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>NAVEGACIÓN</h4>
+          <ul class="footer-links">
+            <li><a href="catalogo.html" class="footer-link">Explorar Catálogo</a></li>
+            <li><a href="agregar-cosa.html" class="footer-link">Publicar una Cosa</a></li>
+            <li><a href="../index.html" class="footer-link">Acceso de Clientes</a></li>
+            <li><a href="registro.html" class="footer-link">Crear Cuenta Nueva</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>ATENCIÓN</h4>
+          <ul class="footer-links">
+            <li><a href="faq.html" class="footer-link">Preguntas Frecuentes</a></li>
+            <li><a href="envios-devoluciones.html" class="footer-link">Guía de Envíos y Devoluciones</a></li>
+            <li><a href="garantia.html" class="footer-link">Garantía de Productos</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto y Ubicación</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>BOLETÍN</h4>
+          <p style="color: #bfbcb6; font-size: 0.85rem; margin-bottom: 0.75rem;">
+            Recibe avisos directos cuando agregamos nuevas piezas al catálogo.
+          </p>
+          <div style="display: flex; gap: 0.25rem;">
+            <input type="email" placeholder="tu@correo.com" class="form-input" style="padding: 0.5rem; font-size: 0.85rem;">
+            <button class="btn btn-primary btn-sm" type="button">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 KOSAS STUDIO. TODOS LOS DERECHOS RESERVADOS.</span>
+        <span>CONTACTO Y UBICACIÓN</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

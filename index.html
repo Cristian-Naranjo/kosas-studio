@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión — KOSAS STUDIO</title>
+  <meta name="description" content="Acceso a la plataforma KOSAS STUDIO. Inicia sesión para explorar el catálogo y gestionar tus objetos.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <aside class="top-notice">
+    <div class="container top-notice-inner">
+      <span>ÁREA DE CLIENTES — GESTIONA TUS PEDIDOS Y SELECCIONES</span>
+      <span>KOSAS STUDIO 2026</span>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-brand">
+        <span>KOSAS</span>
+        <span class="nav-brand-badge">STUDIO</span>
+      </a>
+
+      <nav aria-label="Navegación del sitio">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Iniciar Sesión</a></li>
+          <li><a href="pages/catalogo.html" class="nav-link">Explorar Cosas</a></li>
+          <li><a href="pages/agregar-cosa.html" class="nav-link highlight">+ Publicar Cosa</a></li>
+          <li><a href="pages/registro.html" class="nav-link">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container panel-wrapper">
+
+      <div class="form-panel b-card">
+        
+        <div class="card-header">
+          <span class="tag tag-yellow">ACCESO PRINCIPAL</span>
+          <span class="mono" style="font-size: 0.8rem; font-weight: 700;">MI CUENTA</span>
+        </div>
+
+        <div class="card-body" style="padding: clamp(1.5rem, 3vw, 2.5rem);">
+          
+          <div class="form-header-area">
+            <span class="mono" style="font-size: 0.8rem; color: var(--color-text-muted);">BIENVENIDO DE NUEVO</span>
+            <h1>Iniciar Sesión</h1>
+            <p style="margin-top: 0.25rem;">
+              Ingresa tus credenciales para acceder a tu catálogo de cosas y gestionar tus pedidos.
+            </p>
+          </div>
+
+          <form action="pages/catalogo.html" method="GET">
+            
+            <div class="form-group">
+              <label for="correo" class="form-label">Correo Electrónico</label>
+              <input 
+                type="email" 
+                id="correo" 
+                name="correo" 
+                class="form-input" 
+                placeholder="tu.nombre@ejemplo.com" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem;">
+                <label for="clave" class="form-label" style="margin-bottom: 0;">Contraseña</label>
+                <a href="#" style="font-size: 0.8rem; color: var(--color-text-muted); text-decoration: underline;">¿Olvidaste tu contraseña?</a>
+              </div>
+              <input 
+                type="password" 
+                id="clave" 
+                name="clave" 
+                class="form-input" 
+                placeholder="••••••••••••" 
+                required
+              >
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="padding: 0.9rem; margin-top: var(--space-sm);">
+              Iniciar Sesión en KOSAS
+            </button>
+
+          </form>
+
+          <div class="form-footer-nav">
+            ¿Aún no tienes una cuenta? 
+            <a href="pages/registro.html">Crear cuenta nueva</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>KOSAS STUDIO</h4>
+          <p style="color: #bfbcb6; font-size: 0.9rem; line-height: 1.6;">
+            Diseño, producción y catálogo curado de objetos para espacios contemporáneos. Estructura honesta y materiales de larga durabilidad.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>NAVEGACIÓN</h4>
+          <ul class="footer-links">
+            <li><a href="pages/catalogo.html" class="footer-link">Explorar Catálogo</a></li>
+            <li><a href="pages/agregar-cosa.html" class="footer-link">Publicar una Cosa</a></li>
+            <li><a href="index.html" class="footer-link">Acceso de Clientes</a></li>
+            <li><a href="pages/registro.html" class="footer-link">Crear Cuenta Nueva</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>ATENCIÓN</h4>
+          <ul class="footer-links">
+            <li><a href="pages/faq.html" class="footer-link">Preguntas Frecuentes</a></li>
+            <li><a href="pages/envios-devoluciones.html" class="footer-link">Guía de Envíos y Devoluciones</a></li>
+            <li><a href="pages/garantia.html" class="footer-link">Garantía de Productos</a></li>
+            <li><a href="pages/contacto.html" class="footer-link">Contacto y Ubicación</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>BOLETÍN</h4>
+          <p style="color: #bfbcb6; font-size: 0.85rem; margin-bottom: 0.75rem;">
+            Recibe avisos directos cuando agregamos nuevas piezas al catálogo.
+          </p>
+          <div style="display: flex; gap: 0.25rem;">
+            <input type="email" placeholder="tu@correo.com" class="form-input" style="padding: 0.5rem; font-size: 0.85rem;">
+            <button class="btn btn-primary btn-sm" type="button">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 KOSAS STUDIO. TODOS LOS DERECHOS RESERVADOS.</span>
+        <span>ACCESO PRINCIPAL</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
