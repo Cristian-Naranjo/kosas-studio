@@ -54,6 +54,7 @@ kosas-studio/
     ├── data.js                 # Colección de datos semilla y catálogo predeterminado
     ├── local-storage.js        # Módulo de persistencia local (usuarios y cosas)
     ├── alerts.js               # Gestor de notificaciones visuales y feedback
+    ├── generators.js           # Generación de identificadores únicos, tokens y códigos
     ├── auth-controller.js      # Controlador de lógica para login y registro de usuarios
     └── cosas-controller.js     # Controlador de lógica para el registro y publicación de cosas
 ```
@@ -62,7 +63,7 @@ kosas-studio/
 
 ## 📦 Arquitectura JavaScript Planificada (`js/`)
 
-En esta sección se documenta el rol y las responsabilidades de los cinco módulos previstos para la capa lógica de la aplicación:
+En esta sección se documenta el rol y las responsabilidades de los módulos previstos para la capa lógica de la aplicación:
 
 ### 1. `js/data.js`
 - **Propósito:** Centralizar los datos semilla y las constantes del catálogo.
@@ -85,17 +86,25 @@ En esta sección se documenta el rol y las responsabilidades de los cinco módul
   - Gestionar alertas de advertencia o error cuando existan campos incompletos en los formularios.
   - Temporizar el cierre automático de las alertas y permitir el cierre manual por parte del usuario.
 
-### 4. `js/auth-controller.js`
+### 4. `js/generators.js`
+- **Propósito:** Centralizar las funciones utilitarias para la generación de identificadores dinámicos, tokens de sesión y códigos de referencia.
+- **Responsabilidades:**
+  - **Generador de IDs de Usuario:** Generación de identificadores pseudoaleatorios únicos mediante prefijos controlados (ej. `usr_` + timestamp hexadecimal).
+  - **Generador de Códigos de Catálogo:** Creación de referencias correlativas o alfanuméricas para las piezas publicadas (ej. `ART-107`, `ART-108`).
+  - **Generador de Tokens de Sesión:** Emisión de tokens de autenticación aleatorios (simulación de tokens tipo Bearer/JWT) para almacenar la sesión activa en el navegador.
+  - **Generador de Slugs / Nombres Limpios:** Normalización de nombres de objetos para URLs y nombres de archivo de imagen.
+
+### 5. `js/auth-controller.js`
 - **Propósito:** Controlador de interacción y validación para los flujos de autenticación (Login y Registro).
 - **Responsabilidades:**
-  - **En Inicio de Sesión (`index.html`):** Capturar el envío del formulario, verificar la existencia del correo y coincidencia de contraseña contra los datos en `local-storage.js`, registrar la sesión activa y redirigir a `pages/catalogo.html`.
-  - **En Registro (`pages/registro.html`):** Validar que las contraseñas coincidan, comprobar que el correo no esté duplicado, verificar la aceptación obligatoria de términos, instanciar el objeto bajo el esquema `modeloUsuario`, almacenarlo en persistencia y notificar mediante `alerts.js`.
+  - **En Inicio de Sesión (`index.html`):** Capturar el envío del formulario, verificar la existencia del correo y coincidencia de contraseña contra los datos en `local-storage.js`, solicitar un token a `generators.js`, registrar la sesión activa y redirigir a `pages/catalogo.html`.
+  - **En Registro (`pages/registro.html`):** Validar que las contraseñas coincidan, comprobar que el correo no esté duplicado, verificar la aceptación obligatoria de términos, generar un nuevo ID mediante `generators.js`, instanciar el objeto bajo el esquema `modeloUsuario`, almacenarlo en persistencia y notificar mediante `alerts.js`.
 
-### 5. `js/cosas-controller.js`
+### 6. `js/cosas-controller.js`
 - **Propósito:** Controlador de lógica para el formulario de incorporación y publicación de objetos.
 - **Responsabilidades:**
   - **En Publicación (`pages/agregar-cosa.html`):** Capturar los campos del formulario (nombre, precio, categoría, materiales, dimensiones, stock y descripción).
-  - Sanitizar los valores numéricos y generar un identificador de referencia secuencial (ej. `ART-107`).
+  - Sanitizar los valores numéricos y obtener el nuevo código de referencia mediante `generators.js` (ej. `ART-107`).
   - Procesar la selección de imagen o asignar una ilustración/fotografía predeterminada.
   - Construir el objeto literal correspondiente a `modeloCosa`, agregarlo a la lista de productos en `local-storage.js` y desplegar la alerta de confirmación con redirección al catálogo actualizado.
 
